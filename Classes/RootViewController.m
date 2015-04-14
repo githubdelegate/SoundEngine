@@ -38,7 +38,7 @@ enum mySoundIds {
 	
 	//start the audio manager...
 	self.soundMgr = [[[CMOpenALSoundManager alloc] init] autorelease];
-	soundMgr.soundFileNames = [NSArray arrayWithObject:@"Start.caf"];
+	soundMgr.soundFileNames = [NSArray arrayWithObject:@"engine.caf"];
 }
 
 
