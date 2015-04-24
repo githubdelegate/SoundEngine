@@ -54,6 +54,11 @@
 + (CMOpenALSoundManager *) sharedCMOpenALSoundManager;
 #endif
 
+/*!
+ *  @author usc_zy, 15-04-24 17:04:39
+ *
+ *  @brief  清理声音
+ */
 - (void) purgeSounds;		// purges all sounds from memory, in case of a memory warning...
 - (void) beginInterruption;	// handle os sound interruptions
 - (void) endInterruption;

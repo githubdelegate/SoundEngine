@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A2B158D6-A482-4AD9-BDA3-4090FB2C650E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>AudioSample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CBC06D485297E14B29AF3237C8D6F578986B6421</key>
 		<string>https://github.com/githubdelegate/SoundEngine.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AudioSample.xcodeproj/project.xcworkspace</string>
+	<string>AudioSample.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CBC06D485297E14B29AF3237C8D6F578986B6421</key>

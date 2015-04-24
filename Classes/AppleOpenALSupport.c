@@ -53,7 +53,7 @@ ALvoid  alBufferDataStaticProc(const ALint bid, ALenum format, ALvoid* data, ALs
 {
 	static	alBufferDataStaticProcPtr	proc = NULL;
     
-    if (proc == NULL) {
+   if (proc == NULL) {
         proc = (alBufferDataStaticProcPtr) alcGetProcAddress(NULL, (const ALCchar*) "alBufferDataStatic");
     }
     

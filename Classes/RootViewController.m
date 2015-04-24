@@ -19,6 +19,7 @@
 
 #import "RootViewController.h"
 #import "CMOpenALSoundManager.h"
+#import "DebugOutput.h"
 
 enum mySoundIds {
 	AUDIOEFFECT
@@ -39,21 +40,21 @@ enum mySoundIds {
 	//start the audio manager...
 	self.soundMgr = [[[CMOpenALSoundManager alloc] init] autorelease];
 	soundMgr.soundFileNames = [NSArray arrayWithObject:@"engine.caf"];
-}
 
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 	
-	// start background music
-	[soundMgr playBackgroundMusic:@"backgroundLoop.m4a"]; // you could use forcePlay: YES if you wanted to stop any other audio source (iPod)
+	// 开始播放背景音乐
+	[soundMgr playBackgroundMusic:@"bgMusic.mp3"]; // you could use forcePlay: YES if you wanted to stop any other audio source (iPod)
 }
 
 
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 
 // Customize the number of rows in the table view.
@@ -64,10 +65,9 @@ enum mySoundIds {
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
 	if(section == 0)
-		return @"Background Audio Volume";
+		return @"背景音量";
 	else if(section == 1)
-		return @"Effects volume";
-	
+		return @"音量";
 	else return nil;	
 }
 
@@ -110,15 +110,17 @@ enum mySoundIds {
 	// Configure the cell.
 	if(indexPath.section == 2)
 	{
-		cell.textLabel.text = @"Play sound effect";
+		cell.textLabel.text = @"播放音乐";
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
 	}	
 	else if(indexPath.section == 3)
 	{
-		cell.textLabel.text = @"Play/Pause background music";
+		cell.textLabel.text = @"播放/暂停背景音乐";
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
-	}
-
+	}else if (indexPath.section == 4)
+    {
+        cell.textLabel.text = @"开始播放两个MP3文件";
+    }
     return cell;
 }
 
@@ -131,7 +133,6 @@ enum mySoundIds {
 {
 	soundMgr.soundEffectsVolume = ((UISlider *)sender).value;
 }
-
 
 // Override to support row selection in the table view.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -154,13 +155,21 @@ enum mySoundIds {
 		[soundMgr resumeBackgroundMusic];
 	}
 
+    if(indexPath.section == 4)
+    {
+        [self playMutialMP3File];
+    }
+}
+
+- (void)playMutialMP3File
+{
+   
+
 }
 
 - (void)dealloc {
 	[soundMgr release];
     [super dealloc];
 }
-
-
 @end
 
