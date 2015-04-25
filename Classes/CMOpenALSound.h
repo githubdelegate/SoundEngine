@@ -24,6 +24,13 @@
 #import <OpenAL/al.h>
 #import <OpenAL/alc.h>
 
+@protocol CMOpenALSoundDelegate  <NSObject>
+
+- (double)fetchAudioDuration;
+
+@end
+
+
 @interface CMOpenALSound : NSObject 
 {
 	ALuint			bufferID;		
@@ -38,6 +45,8 @@
 	NSMutableArray	*temporarySounds;	//holds source IDs to temporary sounds (sounds played when the base source was busy)
 	NSString		*sourceFileName;
 }
+
+@property (nonatomic,weak) id<CMOpenALSoundDelegate> delegate;
 
 @property (nonatomic, readonly) ALenum error;
 @property (nonatomic, readonly) ALdouble duration;

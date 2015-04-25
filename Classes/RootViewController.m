@@ -27,6 +27,7 @@ enum mySoundIds {
 
 @interface RootViewController()
 @property (nonatomic, retain) CMOpenALSoundManager *soundMgr;
+
 @end
 
 @implementation RootViewController
@@ -39,17 +40,27 @@ enum mySoundIds {
 	
 	//start the audio manager...
 	self.soundMgr = [[[CMOpenALSoundManager alloc] init] autorelease];
-	soundMgr.soundFileNames = [NSArray arrayWithObject:@"engine.caf"];
+    soundMgr.soundFileNames =  [NSArray arrayWithObjects:@"main.mp3",@"bgMusic.mp3",nil];
 
+    [self addPlayMultiFile];
+}
+
+- (void)addPlayMultiFile
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 100, 50, 50);
+    [btn setBackgroundColor:[UIColor redColor]];
+    [btn addTarget:self action:@selector(playMutialMP3File) forControlEvents:UIControlEventTouchUpInside];
+
+    [[UIApplication sharedApplication].keyWindow addSubview:btn];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 	
 	// 开始播放背景音乐
-	[soundMgr playBackgroundMusic:@"bgMusic.mp3"]; // you could use forcePlay: YES if you wanted to stop any other audio source (iPod)
+//	[soundMgr playBackgroundMusic:@"bgMusic.mp3"]; // you could use forcePlay: YES if you wanted to stop any other audio source (iPod)
 }
-
 
 #pragma mark Table view methods
 
@@ -99,9 +110,7 @@ enum mySoundIds {
 				slider.enabled = !soundMgr.isiPodAudioPlaying; // disable the slider if the ipod is playing...
 			}
 			else
-				[slider addTarget:self action:@selector(effectsVolume:) forControlEvents:UIControlEventValueChanged];		
-			
-			
+				[slider addTarget:self action:@selector(effectsVolume:) forControlEvents:UIControlEventValueChanged];
 			[cell.contentView addSubview:slider];
 			[slider release];
 		}
@@ -163,8 +172,9 @@ enum mySoundIds {
 
 - (void)playMutialMP3File
 {
-   
-
+    NSLog(@"开始播放那个两个文件");
+    [soundMgr playSoundWithID:0];
+    [soundMgr playSoundWithID:1];
 }
 
 - (void)dealloc {

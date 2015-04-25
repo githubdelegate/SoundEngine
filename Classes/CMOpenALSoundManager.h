@@ -29,6 +29,12 @@
 
 @class CMOpenALSound;
 
+@protocol CMOpenALSoundManagerDelegate <NSObject>
+
+- (double)fetchAudioDuration;
+
+@end
+
 @interface CMOpenALSoundManager : NSObject 
 {	
 	AVAudioPlayer		*backgroundAudio;	// background music
@@ -44,6 +50,7 @@
 	BOOL				interrupted;
 	NSString			*currentBackgroundAudioFile;
 }
+@property (nonatomic,weak) id<CMOpenALSoundManagerDelegate> delegate;
 
 @property (nonatomic, retain) NSArray *soundFileNames;
 @property (nonatomic, readonly) BOOL isiPodAudioPlaying;

@@ -321,6 +321,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CMOpenALSoundManager);
 	{
 		//create a new sound
 		sound = [[CMOpenALSound alloc] initWithSoundFile:soundFile doesLoop:NO]; //this will return nil on failure
+        printf("sound =%p",sound);
 		
 		if(!sound) //error
 			return;

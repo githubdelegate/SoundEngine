@@ -115,6 +115,13 @@
 	
 	// get audio data from file
 	bufferData = MyGetOpenALAudioData(fileURL, &size, &format, &freq, &duration);
+    NSLog(@"duration=%f",duration);
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(fetchAudioDuration)]) {
+        [self.delegate fetchAudioDuration];
+    }
+
+      NSLog(@"12--%@",[NSThread currentThread]);
 	CFRelease(fileURL);		
 	
 	// grab a buffer ID from openAL
@@ -159,7 +166,7 @@
 	alDeleteSources(1, &tmpSourceID);	
 }
 
-- (BOOL) play
+- (BOOL)play
 {
 	if([self isPlaying]) //see if the base source is busy...
 	{

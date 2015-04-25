@@ -17,7 +17,7 @@
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
 		F75E7C5F1AE9F2B4003289F2 /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F75E7C5E1AE9F2B4003289F2 /* bgMusic.mp3 */; };
 		F75E7C611AE9F2BE003289F2 /* uscfile.wav in Resources */ = {isa = PBXBuildFile; fileRef = F75E7C601AE9F2BE003289F2 /* uscfile.wav */; };
-		F75E7C691AEA4207003289F2 /* 123.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F75E7C681AEA4207003289F2 /* 123.mp3 */; };
+		F75E7C691AEA4207003289F2 /* main.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F75E7C681AEA4207003289F2 /* main.mp3 */; };
 		FA3D997E105EA8850075FE34 /* AppleOpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = FA3D9979105EA8850075FE34 /* AppleOpenALSupport.c */; };
 		FA3D997F105EA8850075FE34 /* CMOpenALSound.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3D997B105EA8850075FE34 /* CMOpenALSound.m */; };
 		FA3D9980105EA8850075FE34 /* CMOpenALSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3D997D105EA8850075FE34 /* CMOpenALSoundManager.m */; };
@@ -48,7 +48,7 @@
 		8D1107310486CEB800E47090 /* AudioSample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AudioSample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		F75E7C5E1AE9F2B4003289F2 /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
 		F75E7C601AE9F2BE003289F2 /* uscfile.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = uscfile.wav; sourceTree = "<group>"; };
-		F75E7C681AEA4207003289F2 /* 123.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 123.mp3; sourceTree = "<group>"; };
+		F75E7C681AEA4207003289F2 /* main.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = main.mp3; sourceTree = "<group>"; };
 		FA3D9978105EA8850075FE34 /* AppleOpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleOpenALSupport.h; sourceTree = "<group>"; };
 		FA3D9979105EA8850075FE34 /* AppleOpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AppleOpenALSupport.c; sourceTree = "<group>"; };
 		FA3D997A105EA8850075FE34 /* CMOpenALSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMOpenALSound.h; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F75E7C681AEA4207003289F2 /* 123.mp3 */,
+				F75E7C681AEA4207003289F2 /* main.mp3 */,
 				FA3D99B7105EAC920075FE34 /* volumedown.png */,
 				FA3D99B8105EAC920075FE34 /* volumeup.png */,
 				F75E7C601AE9F2BE003289F2 /* uscfile.wav */,
@@ -243,7 +243,7 @@
 				FA3D99AE105EAC4E0075FE34 /* Start.caf in Resources */,
 				F75E7C611AE9F2BE003289F2 /* uscfile.wav in Resources */,
 				F75E7C5F1AE9F2B4003289F2 /* bgMusic.mp3 in Resources */,
-				F75E7C691AEA4207003289F2 /* 123.mp3 in Resources */,
+				F75E7C691AEA4207003289F2 /* main.mp3 in Resources */,
 				FA3D99AF105EAC4E0075FE34 /* backgroundLoop.m4a in Resources */,
 				FA3D99B9105EAC920075FE34 /* volumedown.png in Resources */,
 				FA3D99BA105EAC920075FE34 /* volumeup.png in Resources */,
@@ -275,6 +275,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -290,6 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AudioSample_Prefix.pch;

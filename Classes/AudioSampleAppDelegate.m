@@ -41,7 +41,5 @@
 	[window release];
 	[super dealloc];
 }
-
-
 @end
 
